@@ -83,3 +83,16 @@ describe('snakeCase()', () => {
     expect(results).toEqual(expected);
   });
 });
+
+describe('incrementBy()', () => {
+  const results = mocks.numbers.map(nums => incrementBy(nums, 2));
+  const expected = [
+    [4, 19, -9, 2],
+    [130, 41, -20, 22],
+    [14, 101, 45, 13],
+  ];
+
+  test('should add the input increment value to each number in the input array', () => {
+    expect(results).toEqual(expected);
+  });
+});
