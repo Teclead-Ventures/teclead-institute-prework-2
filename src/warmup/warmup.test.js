@@ -97,11 +97,20 @@ describe('incrementBy()', () => {
   });
 });
 
-describe('appentTo()', () => {
+describe('appendTo()', () => {
   const results = appendTo(mocks.strings, '!');
   const expected = ['hello world!!', 'we love JS!', 'css less so...!'];
 
-  test('should add the input increment value to each number in the input array', () => {
+  test('should append the input value to the end of each string in the input array', () => {
+    expect(results).toEqual(expected);
+  });
+});
+
+describe('insertAt()', () => {
+  const results = insertAt(mocks.strings, '!', 1);
+  const expected = ['h!ello world!', 'w!e love JS', 'c!ss less so...'];
+
+  test('should insert the input value at the input index for each string in the input array', () => {
     expect(results).toEqual(expected);
   });
 });
