@@ -20,7 +20,7 @@ function incrementBy(nums, incrementVal) {}
 
 function appendTo(stringsArr, appendVal) {}
 
-function insertAt(stringsArr, insertVal) {}
+function insertAt(stringsArr, insertVal, index) {}
 
 function wordCounts(str) {}
 
