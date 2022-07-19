@@ -29,3 +29,12 @@ describe('reverseString()', () => {
     expect(results).toEqual(expected);
   });
 });
+
+describe('sum()', () => {
+  const results = mocks.numbers.map(sum);
+  const expected = [8, 165, 165];
+
+  test('should return the sum of numbers in the input array', () => {
+    expect(results).toEqual(expected);
+  });
+});
