@@ -38,3 +38,12 @@ describe('sum()', () => {
     expect(results).toEqual(expected);
   });
 });
+
+describe('mean()', () => {
+  const results = mocks.numbers.map(mean);
+  const expected = [2, 41.25, 41.25];
+
+  test('should return the sum of numbers in the input array', () => {
+    expect(results).toEqual(expected);
+  });
+});
