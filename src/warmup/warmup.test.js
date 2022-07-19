@@ -96,3 +96,12 @@ describe('incrementBy()', () => {
     expect(results).toEqual(expected);
   });
 });
+
+describe('appentTo()', () => {
+  const results = appendTo(mocks.strings, '!');
+  const expected = ['hello world!!', 'we love JS!', 'css less so...!'];
+
+  test('should add the input increment value to each number in the input array', () => {
+    expect(results).toEqual(expected);
+  });
+});
