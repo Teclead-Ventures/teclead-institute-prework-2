@@ -47,3 +47,12 @@ describe('mean()', () => {
     expect(results).toEqual(expected);
   });
 });
+
+describe('findMax()', () => {
+  const results = mocks.numbers.map(findMax);
+  const expected = [17, 128, 99];
+
+  test('should return the sum of numbers in the input array', () => {
+    expect(results).toEqual(expected);
+  });
+});
