@@ -43,7 +43,7 @@ describe('mean()', () => {
   const results = mocks.numbers.map(mean);
   const expected = [2, 41.25, 41.25];
 
-  test('should return the sum of numbers in the input array', () => {
+  test('should return arithmetic mean of the numbers in the input array', () => {
     expect(results).toEqual(expected);
   });
 });
@@ -52,7 +52,7 @@ describe('findMax()', () => {
   const results = mocks.numbers.map(findMax);
   const expected = [17, 128, 99];
 
-  test('should return the sum of numbers in the input array', () => {
+  test('should return the greatest number in the input array', () => {
     expect(results).toEqual(expected);
   });
 });
@@ -61,7 +61,7 @@ describe('uppercase()', () => {
   const results = uppercase(mocks.strings);
   const expected = ['HELLO WORLD!', 'WE LOVE JS', 'CSS LESS SO...'];
 
-  test('should return the sum of numbers in the input array', () => {
+  test('should uppercase all the strings in the array', () => {
     expect(results).toEqual(expected);
   });
 });
@@ -70,7 +70,16 @@ describe('capitalize()', () => {
   const results = capitalize(mocks.strings);
   const expected = ['Hello world!', 'We love js', 'Css less so...'];
 
-  test('should return the sum of numbers in the input array', () => {
+  test('should capitalize all the strings in the array', () => {
+    expect(results).toEqual(expected);
+  });
+});
+
+describe('snakeCase()', () => {
+  const results = mocks.strings.map(snakeCase);
+  const expected = ['hello_world!', 'we_love_jS', 'css_less_so...'];
+
+  test('should convert all the strings in the array to snake case', () => {
     expect(results).toEqual(expected);
   });
 });
