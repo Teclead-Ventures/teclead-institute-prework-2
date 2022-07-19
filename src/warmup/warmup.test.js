@@ -13,7 +13,7 @@ const {
 } = require('./warmup');
 
 const mocks = {
-  strings: ['hello world!', 'we love JS', 'css not less so...'],
+  strings: ['hello world!', 'we love JS', 'css less so...'],
   numbers: [
     [2, 17, -11, 0],
     [128, 39, -22, 20],
@@ -23,7 +23,7 @@ const mocks = {
 
 describe('reverseString()', () => {
   const results = mocks.strings.map(reverseString);
-  const expected = ['!dlrow olleh', 'SJ evol ew', '...os ssel ton ssc'];
+  const expected = ['!dlrow olleh', 'SJ evol ew', '...os ssel ssc'];
 
   test('should return a string with characters reversed', () => {
     expect(results).toEqual(expected);
@@ -51,6 +51,15 @@ describe('mean()', () => {
 describe('findMax()', () => {
   const results = mocks.numbers.map(findMax);
   const expected = [17, 128, 99];
+
+  test('should return the sum of numbers in the input array', () => {
+    expect(results).toEqual(expected);
+  });
+});
+
+describe('uppercase()', () => {
+  const results = uppercase(mocks.strings);
+  const expected = ['HELLO WORLD!', 'WE LOVE JS', 'CSS LESS SO...'];
 
   test('should return the sum of numbers in the input array', () => {
     expect(results).toEqual(expected);
