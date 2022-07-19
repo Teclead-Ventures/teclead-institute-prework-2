@@ -65,3 +65,12 @@ describe('uppercase()', () => {
     expect(results).toEqual(expected);
   });
 });
+
+describe('capitalize()', () => {
+  const results = capitalize(mocks.strings);
+  const expected = ['Hello world!', 'We love js', 'Css less so...'];
+
+  test('should return the sum of numbers in the input array', () => {
+    expect(results).toEqual(expected);
+  });
+});
