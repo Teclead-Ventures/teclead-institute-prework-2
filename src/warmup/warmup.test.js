@@ -14,6 +14,7 @@ const {
 
 const mocks = {
   strings: ['hello world!', 'we love JS', 'css less so...'],
+  sentence: 'it was the best of times it was the worst of times',
   numbers: [
     [2, 17, -11, 0],
     [128, 39, -22, 20],
@@ -111,6 +112,23 @@ describe('insertAt()', () => {
   const expected = ['h!ello world!', 'w!e love JS', 'c!ss less so...'];
 
   test('should insert the input value at the input index for each string in the input array', () => {
+    expect(results).toEqual(expected);
+  });
+});
+
+describe('wordCounts()', () => {
+  const results = wordCounts(mocks.sentence);
+  const expected = {
+    it: 2,
+    was: 2,
+    the: 2,
+    best: 1,
+    of: 2,
+    times: 2,
+    worst: 1,
+  };
+
+  test('should return an object with the number of times each word appears in the input string', () => {
     expect(results).toEqual(expected);
   });
 });
