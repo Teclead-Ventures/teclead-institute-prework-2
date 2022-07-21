@@ -104,6 +104,7 @@ describe('isNan()', () => {
   test('should return true if the value is NaN, and false otherwise.', () => {
     expect(isNaN(NaN)).toBe(true);
     expect(isNaN(Number.NaN)).toBe(true);
+
     expect(isNaN(Infinity)).toBe(false);
     expect(isNaN(-Infinity)).toBe(false);
     expect(isNaN(1)).toBe(false);
@@ -113,5 +114,20 @@ describe('isNan()', () => {
     expect(isNaN([])).toBe(false);
     expect(isNaN({})).toBe(false);
     expect(isNaN(() => {})).toBe(false);
+  });
+});
+
+describe('toNumbers()', () => {
+  test('should return an array of numbers, where each number is the result of coercing the corresponding value in the input array to be a number.', () => {
+    expect(toNumbers([])).toEqual([]);
+    expect(toNumbers([1, 2, 3])).toEqual([1, 2, 3]);
+    expect(toNumbers([1, 2, 3, '4', '5'])).toEqual([1, 2, 3, 4, 5]);
+    expect(toNumbers([1, 2, 3, 'a', 'b'])).toEqual([1, 2, 3, NaN, NaN]);
+    expect(toNumbers([1, 2, 3, {}])).toEqual([1, 2, 3, NaN]);
+    expect(toNumbers([1, 2, 3, { a: 1, b: 2, c: 3 }])).toEqual([1, 2, 3, NaN]);
+    expect(toNumbers([1, 2, 3, () => {}])).toEqual([1, 2, 3, NaN]);
+    expect(toNumbers([1, 2, 3, []])).toEqual([1, 2, 3, 0]);
+    expect(toNumbers([1, 2, 3, [4], [5]])).toEqual([1, 2, 3, 4, 5]);
+    expect(toNumbers([1, 2, 3, [4, 5], [6]])).toEqual([1, 2, 3, NaN, 6]);
   });
 });

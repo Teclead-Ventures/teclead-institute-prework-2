@@ -47,6 +47,8 @@ Complete the function toNumbers below.
 
 It has one parameter (an array of values).
 It should return an array of numbers, where each number is the result of coercing the corresponding value in the input array to be a number.
+
+You will notice that some interesting things happen when certain values are coerced to numbers.
 */
 function toNumbers(array) {}
 
