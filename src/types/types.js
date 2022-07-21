@@ -82,6 +82,6 @@ module.exports = {
   isNaN,
   toNumbers,
   toStrings,
-  removeNums,
+  removeNumbers,
   removeStrings,
 };
