@@ -99,3 +99,19 @@ describe('isFunction()', () => {
     expect(isFunction(123)).toBe(false);
   });
 });
+
+describe('isNan()', () => {
+  test('should return true if the value is NaN, and false otherwise.', () => {
+    expect(isNaN(NaN)).toBe(true);
+    expect(isNaN(Number.NaN)).toBe(true);
+    expect(isNaN(Infinity)).toBe(false);
+    expect(isNaN(-Infinity)).toBe(false);
+    expect(isNaN(1)).toBe(false);
+    expect(isNaN(-1)).toBe(false);
+    expect(isNaN(1.1)).toBe(false);
+    expect(isNaN(-1.1)).toBe(false);
+    expect(isNaN([])).toBe(false);
+    expect(isNaN({})).toBe(false);
+    expect(isNaN(() => {})).toBe(false);
+  });
+});
