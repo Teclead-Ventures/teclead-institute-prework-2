@@ -67,3 +67,19 @@ describe('isArray()', () => {
     expect(isArray(NaN)).toBe(false);
   });
 });
+
+describe('isObject()', () => {
+  test('should return true if the value is an object, and false otherwise.', () => {
+    expect(isObject({})).toBe(true);
+    expect(isObject({ a: 1, b: 2, c: 3 })).toBe(true);
+    expect(isObject([])).toBe(true);
+    expect(isObject(() => {})).toBe(true);
+
+    expect(isObject(null)).toBe(false);
+    expect(isObject(undefined)).toBe(false);
+    expect(isObject('abc')).toBe(false);
+    expect(isObject(true)).toBe(false);
+    expect(isObject(NaN)).toBe(false);
+    expect(isObject(123)).toBe(false);
+  });
+});
