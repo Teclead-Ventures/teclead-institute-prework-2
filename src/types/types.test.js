@@ -83,3 +83,19 @@ describe('isObject()', () => {
     expect(isObject(123)).toBe(false);
   });
 });
+
+describe('isFunction()', () => {
+  test('should return true if the value is a function, and false otherwise.', () => {
+    expect(isFunction(() => {})).toBe(true);
+    expect(isFunction(function () {})).toBe(true);
+    expect(isFunction(function* () {})).toBe(true);
+    expect(isFunction(async () => {})).toBe(true);
+
+    expect(isFunction(null)).toBe(false);
+    expect(isFunction(undefined)).toBe(false);
+    expect(isFunction('')).toBe(false);
+    expect(isFunction(true)).toBe(false);
+    expect(isFunction(NaN)).toBe(false);
+    expect(isFunction(123)).toBe(false);
+  });
+});
