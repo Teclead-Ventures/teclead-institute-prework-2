@@ -36,3 +36,34 @@ describe('isNumber()', () => {
     expect(isNumber(() => {})).toBe(false);
   });
 });
+
+describe('isArray()', () => {
+  test('should return true if the value is an array, and false otherwise.', () => {
+    expect(isArray([])).toBe(true);
+    expect(isArray([1, 2, 3])).toBe(true);
+    expect(isArray([1, 2, 3, 'a', 'b', 'c'])).toBe(true);
+    expect(isArray([1, 2, 3, { a: 1, b: 2, c: 3 }])).toBe(true);
+    expect(isArray([1, 2, 3, () => {}])).toBe(true);
+    expect(isArray([1, 2, 3, function () {}])).toBe(true);
+    expect(isArray([1, 2, 3, NaN])).toBe(true);
+    expect(isArray([1, 2, 3, Infinity])).toBe(true);
+    expect(isArray([1, 2, 3, -Infinity])).toBe(true);
+    expect(isArray([1, 2, 3, 0])).toBe(true);
+    expect(isArray([1, 2, 3, -0])).toBe(true);
+    expect(isArray([1, 2, 3, 1.1])).toBe(true);
+    expect(isArray([1, 2, 3, -1.1])).toBe(true);
+    expect(isArray([1, 2, 3, 0.1])).toBe(true);
+    expect(isArray([1, 2, 3, -0.1])).toBe(true);
+    expect(isArray([1, 2, 3, 1e10])).toBe(true);
+    expect(isArray([1, 2, 3, -1e10])).toBe(true);
+
+    expect(isArray(null)).toBe(false);
+    expect(isArray(undefined)).toBe(false);
+    expect(isArray('')).toBe(false);
+    expect(isArray('1')).toBe(false);
+    expect(isArray(true)).toBe(false);
+    expect(isArray(false)).toBe(false);
+    expect(isArray(1)).toBe(false);
+    expect(isArray(NaN)).toBe(false);
+  });
+});
