@@ -22,7 +22,9 @@ function setup() {
     mockAdd: jest.fn(function add(x, y) {
       return x + y;
     }),
-
+    mockSquare: jest.fn(function square(x) {
+      return x ** 2;
+    }),
     strings: ['h', 'e', 'l', 'l', 'o'],
     initialStr: 'Oh ',
     expectedStrings: ['HELLO', 'OH HELLO'],
@@ -31,6 +33,28 @@ function setup() {
     }),
   };
 }
+
+describe.only('forEach(array, callback)', () => {
+  const { numbers, mockSquare } = setup();
+
+  const result = forEach(numbers, mockSquare);
+
+  test('should not return anything', () => {
+    expect(result).toBeUndefined();
+  });
+
+  test('should call callback once for each element in the array', () => {
+    expect(mockSquare).toHaveBeenCalledTimes(numbers.length);
+  });
+
+  test('should call callback with the correct arguments', () => {
+    expect(mockSquare).toHaveBeenCalledWith(1, 0, numbers);
+    expect(mockSquare).toHaveBeenCalledWith(2, 1, numbers);
+    expect(mockSquare).toHaveBeenCalledWith(3, 2, numbers);
+    expect(mockSquare).toHaveBeenCalledWith(4, 3, numbers);
+    expect(mockSquare).toHaveBeenCalledWith(5, 4, numbers);
+  });
+});
 
 describe('reduce(array, callback, initialValue) should:', () => {
   const { numbers, strings, initialNum, initialStr, mockAdd, mockUpperCase } =
