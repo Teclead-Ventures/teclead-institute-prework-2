@@ -10,6 +10,20 @@ function indexOf(array, value) {}
 
 function unique(array) {}
 
+/*
+
+Complete the forEach function below.
+
+Parameters:
+1: array: an array
+2: callback: a function
+
+forEach should call the callback on each element of the array.
+forEach does not return anything.
+
+Here's a link to the mdn documentation for forEach():
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+*/
 function forEach(array, callback) {}
 
 function map(array, callback) {}
@@ -67,7 +81,7 @@ A clarification: if no argument is provided for initialValue
 reduce() automatically initializes the accumulator to be the first array element,
 and then begins iterating from the second element.
 
-Here's a link to the mdn docs for reduce():
+Here's a link to the mdn documentation for reduce():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 */
 
