@@ -2,6 +2,15 @@
 ARRAY OPERATIONS
 */
 
+/*
+
+Complete the intersection function below.
+
+Parameters:
+1: arrays: an array of arrays
+
+intersection should return an array of values that are present in all of the input arrays.
+*/
 function intersection(arrays) {}
 
 function union(arrays) {}

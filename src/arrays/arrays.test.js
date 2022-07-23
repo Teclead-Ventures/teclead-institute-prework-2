@@ -34,6 +34,25 @@ function setup() {
   };
 }
 
+describe('intersection(arrays)', () => {
+  const data = [
+    [5, 10, 15, 20],
+    [15, 88, 1, 5, 7],
+    [1, 10, 15, 5, 20],
+  ];
+
+  const result = intersection(data);
+  const expected = [5, 15];
+
+  test('should return an array', () => {
+    expect(result).toBeInstanceOf(Array);
+  });
+
+  test('the array should contain elements appearing in all of the passed-in arrays', () => {
+    expect(result).toEqual(expected);
+  });
+});
+
 describe('forEach(array, callback)', () => {
   const { numbers, mockSquare } = setup();
 
