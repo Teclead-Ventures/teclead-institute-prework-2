@@ -71,7 +71,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 function map(array, callback) {}
 
-function filter(collection, callback) {}
+function filter(array, callback) {}
 
 function reject(collection, callback) {}
 
