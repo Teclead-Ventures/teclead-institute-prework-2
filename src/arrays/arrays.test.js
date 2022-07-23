@@ -34,7 +34,7 @@ function setup() {
   };
 }
 
-describe.only('forEach(array, callback)', () => {
+describe('forEach(array, callback)', () => {
   const { numbers, mockSquare } = setup();
 
   const result = forEach(numbers, mockSquare);
