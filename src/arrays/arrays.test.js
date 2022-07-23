@@ -56,6 +56,34 @@ describe('forEach(array, callback)', () => {
   });
 });
 
+describe('map(array, callback)', () => {
+  const { numbers, mockSquare } = setup();
+
+  const result = map(numbers, mockSquare);
+  const expected = [1, 4, 9, 16, 25];
+
+  test('should return a new array', () => {
+    expect(result).toBeInstanceOf(Array);
+    expect(result).not.toBe(numbers);
+  });
+
+  test('callback should be called for every array element', () => {
+    expect(mockSquare).toHaveBeenCalledTimes(numbers.length);
+  });
+
+  test('array elements should have been transformed by callback', () => {
+    expect(result).toEqual(expected);
+  });
+
+  test('callback should be called with the correct arguments', () => {
+    expect(mockSquare).toHaveBeenCalledWith(1, 0, numbers);
+    expect(mockSquare).toHaveBeenCalledWith(2, 1, numbers);
+    expect(mockSquare).toHaveBeenCalledWith(3, 2, numbers);
+    expect(mockSquare).toHaveBeenCalledWith(4, 3, numbers);
+    expect(mockSquare).toHaveBeenCalledWith(5, 4, numbers);
+  });
+});
+
 describe('reduce(array, callback, initialValue) should:', () => {
   const { numbers, strings, initialNum, initialStr, mockAdd, mockUpperCase } =
     setup();
