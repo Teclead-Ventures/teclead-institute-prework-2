@@ -1,5 +1,12 @@
 /*
 ARRAY OPERATIONS
+
+
+If you are stuck or need a hint, check out the test file arrays.test.js.
+
+To test your solutions, run the following command in your terminal:
+
+npm t arrays
 */
 
 /*
@@ -16,10 +23,12 @@ function intersection(arrays) {}
 /*
 
 Complete the union function below.
+
 Parameters:
 1: arrays: an array of arrays
 
-union() should return an array of values that are present in any of the input arrays. The returned array should not contain duplicates.
+union() should return an array of values that are present in any of the input arrays.
+The returned array should not contain duplicates.
 Preserve the order of the values in the input arrays.
 */
 
@@ -123,6 +132,19 @@ function reduce(array, callback, initialValue) {}
 
 function flatten(array) {}
 
+/*
+
+Complete the prioritize function below.
+
+Parameters:
+1: array: an array
+2: callback: a function
+
+The provided callback will return either true or false.
+prioritize should iterate through the array and perform the callback on each element,
+returning a new array where all the elements that yielded a
+return value of true come first, and the elements that yielded false come after.
+*/
 function prioritize(array, callback) {}
 
 module.exports = {

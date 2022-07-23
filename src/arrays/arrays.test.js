@@ -21,18 +21,24 @@ function setup() {
       [15, 88, 1, 5, 7],
       [100, 15, 10, 1, 5],
     ],
+
     numbers: [1, 2, 3, 4, 5],
     initialNum: 10,
     expectedSums: [15, 25],
+
+    strings: ['h', 'e', 'l', 'l', 'o'],
+    initialStr: 'Oh ',
+    expectedStrings: ['HELLO', 'OH HELLO'],
+
     mockAdd: jest.fn(function add(x, y) {
       return x + y;
     }),
     mockSquare: jest.fn(function square(x) {
       return x ** 2;
     }),
-    strings: ['h', 'e', 'l', 'l', 'o'],
-    initialStr: 'Oh ',
-    expectedStrings: ['HELLO', 'OH HELLO'],
+    mockIsEven: jest.fn(function isEven(x) {
+      return x % 2 === 0;
+    }),
     mockUpperCase: jest.fn(function upperCase(accumulator, string) {
       return `${(accumulator + string).toUpperCase()}`;
     }),
@@ -169,5 +175,27 @@ describe('reduce(array, callback, initialValue) should:', () => {
 
     expect(mockAdd).toHaveBeenCalledTimes(expected);
     expect(mockUpperCase).toHaveBeenCalledTimes(expected);
+  });
+});
+
+describe('prioritize(array, callback)', () => {
+  const { numbers, mockIsEven } = setup();
+
+  const result = prioritize(numbers, mockIsEven);
+  const expected = [2, 4, 1, 3, 5];
+
+  test('should return a new array', () => {
+    expect(result).toBeInstanceOf(Array);
+    expect(result).not.toBe(numbers);
+  });
+
+  test('should call the callback on each element', () => {
+    const mockIsEvenCalls = mockIsEven.mock.calls.length;
+
+    expect(mockIsEvenCalls).toBeGreaterThanOrEqual(numbers.length);
+  });
+
+  test('elements that returned true when passed to callback should come before those that returned false', () => {
+    expect(result).toEqual(expected);
   });
 });

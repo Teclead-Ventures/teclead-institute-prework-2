@@ -1,5 +1,12 @@
 /*
 THINKING ABOUT TYPES
+
+
+If you are stuck or need a hint, check out the test file types.test.js.
+
+To test your solutions, run the following command in your terminal:
+
+npm t types
 */
 
 /*
