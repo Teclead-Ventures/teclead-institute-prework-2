@@ -9,9 +9,19 @@ Complete the intersection function below.
 Parameters:
 1: arrays: an array of arrays
 
-intersection should return an array of values that are present in all of the input arrays.
+intersection() should return an array of values that are present in all of the input arrays.
 */
 function intersection(arrays) {}
+
+/*
+
+Complete the union function below.
+Parameters:
+1: arrays: an array of arrays
+
+union() should return an array of values that are present in any of the input arrays. The returned array should not contain duplicates.
+Preserve the order of the values in the input arrays.
+*/
 
 function union(arrays) {}
 
@@ -27,7 +37,7 @@ Parameters:
 1: array: an array
 2: callback: a function
 
-forEach should call the callback on each element of the array.
+forEach() should call the callback on each element of the array.
 forEach does not return anything.
 
 Here's a link to the mdn documentation for forEach():
@@ -43,7 +53,7 @@ Parameters:
 1: array: an array
 2: callback: a function
 
-map should return a new array filled with elements that are the result
+map() should return a new array filled with elements that are the result
 of calling the callback function on each element of the input array.
 
 Here's a link to the mdn documentation for map():

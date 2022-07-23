@@ -16,6 +16,11 @@ const {
 
 function setup() {
   return {
+    data: [
+      [5, 10, 15],
+      [15, 88, 1, 5, 7],
+      [100, 15, 10, 1, 5],
+    ],
     numbers: [1, 2, 3, 4, 5],
     initialNum: 10,
     expectedSums: [15, 25],
@@ -35,11 +40,7 @@ function setup() {
 }
 
 describe('intersection(arrays)', () => {
-  const data = [
-    [5, 10, 15, 20],
-    [15, 88, 1, 5, 7],
-    [1, 10, 15, 5, 20],
-  ];
+  const { data } = setup();
 
   const result = intersection(data);
   const expected = [5, 15];
@@ -49,6 +50,21 @@ describe('intersection(arrays)', () => {
   });
 
   test('the array should contain elements appearing in all of the passed-in arrays', () => {
+    expect(result).toEqual(expected);
+  });
+});
+
+describe('union(arrays)', () => {
+  const { data } = setup();
+
+  const result = union(data);
+  const expected = [5, 10, 15, 88, 1, 7, 100];
+
+  test('should return an array', () => {
+    expect(result).toBeInstanceOf(Array);
+  });
+
+  test('returned array should contain all values of the passed-in arrays', () => {
     expect(result).toEqual(expected);
   });
 });
