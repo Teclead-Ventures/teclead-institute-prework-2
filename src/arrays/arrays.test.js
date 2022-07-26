@@ -23,10 +23,13 @@ function setup() {
 
     numbers: [1, 2, 3, 4, 5],
     numbersWithDuplicates: [1, 2, 3, 4, 5, 1, 2, 3, 4, 5],
+    nestedNumbers: [1, 2, 3, 4, 5, [1, 2, 3, 4, 5]],
+    deeplyNestedNumbers: [1, 2, [3, 4, [5, [1, 2, [[3, [4, [5]]]]]]]],
     initialNum: 10,
     expectedSums: [15, 25],
 
     strings: ['h', 'e', 'l', 'l', 'o'],
+    nestedStrings: ['h', 'e', 'l', 'l', 'o', ['h', 'e', 'l', 'l', 'o']],
     initialStr: 'Oh ',
     expectedStrings: ['HELLO', 'OH HELLO'],
 
@@ -286,6 +289,31 @@ describe('reduce(array, callback, initialValue) should:', () => {
 
     expect(mockAdd).toHaveBeenCalledTimes(expected);
     expect(mockUpperCase).toHaveBeenCalledTimes(expected);
+  });
+});
+
+describe('flatten(array)', () => {
+  const { numbers, nestedNumbers, deeplyNestedNumbers } = setup();
+
+  test('should return a new array', () => {
+    const result = flatten(nestedNumbers);
+
+    expect(result).toBeInstanceOf(Array);
+    expect(result).not.toBe(nestedNumbers);
+  });
+
+  test('should flatten a nested array', () => {
+    const result = flatten(nestedNumbers);
+    const expected = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+    expect(result).toEqual(expected);
+  });
+
+  test('should flatten deeply nested arrays', () => {
+    const result = flatten(deeplyNestedNumbers);
+    const expected = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+    expect(result).toEqual(expected);
   });
 });
 

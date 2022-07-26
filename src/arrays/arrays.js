@@ -49,8 +49,8 @@ Parameters:
 2: callback: a function
 
 forEach() should call the callback on each element of the array.
-The callback should be called with the following arguments:
 
+The callback should be called with the following arguments:
 1. the current array element
 2. the current array index
 3. the whole array itself
@@ -73,7 +73,6 @@ map() should return a new array filled with elements that are the result
 of calling the callback function on each element of the input array.
 
 The callback function should be called with the following arguments:
-
 1. the current array element
 2. the current array index
 3. the whole array itself
@@ -93,7 +92,6 @@ Parameters:
 filter() should return a new array with all elements that yielded a return value of true from the callback function.
 
 The callback function should be called with the following arguments:
-
 1. the current array element
 2. the current array index
 3. the whole array itself
@@ -113,7 +111,6 @@ Parameters:
 reject() should return a new array with all elements that yielded a return value of false from the callback function.
 
 The callback function should be called with the following arguments:
-
 1. the current array element
 2. the current array index
 3. the whole array itself
@@ -131,7 +128,6 @@ every() should return true if the callback function returns true for every eleme
 Otherwise, it should return false.
 
 The callback function should be called with the following arguments:
-
 1. the current array element
 2. the current array index
 3. the whole array itself
@@ -152,7 +148,6 @@ some() should return true if the callback function returns true for any element 
 Otherwise, it should return false.
 
 The callback function should be called with the following arguments:
-
 1. the current array element
 2. the current array index
 3. the whole array itself
@@ -211,6 +206,23 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 */
 function reduce(array, callback, initialValue) {}
 
+/*
+Complete the flatten function below. Do not use the native .flat() method.
+
+Parameters:
+1: array: an array
+
+flatten() should return a new array with all elements of the input array flattened into a single array.
+
+Example:
+const array = [1, [2, 3], [[4], [5]]];
+flatten(array); // -> [1, 2, 3, 4, 5]
+
+Getting this to work for arrays of any depth is a challenge. You will need to use recursion. Here's a link to a great intro to recursion: https://medium.com/codesmith-software-engineering/recursion-a-free-course-with-challenges-video-1c24074f134a
+
+And here's a link to the mdn documentation for flat():
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+*/
 function flatten(array) {}
 
 /*
