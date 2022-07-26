@@ -2,6 +2,7 @@ const {
   intersection,
   union,
   unique,
+  prioritize,
   forEach,
   map,
   filter,
@@ -10,7 +11,6 @@ const {
   some,
   reduce,
   flatten,
-  prioritize,
 } = require('./arrays');
 
 function setup() {
@@ -94,6 +94,28 @@ describe('unique(array)', () => {
   });
 
   test('returned array should contain all unique values of the passed-in array', () => {
+    expect(result).toEqual(expected);
+  });
+});
+
+describe('prioritize(array, callback)', () => {
+  const { numbers, mockIsEven } = setup();
+
+  const result = prioritize(numbers, mockIsEven);
+  const expected = [2, 4, 1, 3, 5];
+
+  test('should return a new array', () => {
+    expect(result).toBeInstanceOf(Array);
+    expect(result).not.toBe(numbers);
+  });
+
+  test('should call the callback on each element', () => {
+    const mockIsEvenCalls = mockIsEven.mock.calls.length;
+
+    expect(mockIsEvenCalls).toBeGreaterThanOrEqual(numbers.length);
+  });
+
+  test('elements that returned true when passed to callback should come before those that returned false', () => {
     expect(result).toEqual(expected);
   });
 });
@@ -293,7 +315,7 @@ describe('reduce(array, callback, initialValue) should:', () => {
 });
 
 describe('flatten(array)', () => {
-  const { numbers, nestedNumbers, deeplyNestedNumbers } = setup();
+  const { nestedNumbers, deeplyNestedNumbers } = setup();
 
   test('should return a new array', () => {
     const result = flatten(nestedNumbers);
@@ -313,28 +335,6 @@ describe('flatten(array)', () => {
     const result = flatten(deeplyNestedNumbers);
     const expected = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
 
-    expect(result).toEqual(expected);
-  });
-});
-
-describe('prioritize(array, callback)', () => {
-  const { numbers, mockIsEven } = setup();
-
-  const result = prioritize(numbers, mockIsEven);
-  const expected = [2, 4, 1, 3, 5];
-
-  test('should return a new array', () => {
-    expect(result).toBeInstanceOf(Array);
-    expect(result).not.toBe(numbers);
-  });
-
-  test('should call the callback on each element', () => {
-    const mockIsEvenCalls = mockIsEven.mock.calls.length;
-
-    expect(mockIsEvenCalls).toBeGreaterThanOrEqual(numbers.length);
-  });
-
-  test('elements that returned true when passed to callback should come before those that returned false', () => {
     expect(result).toEqual(expected);
   });
 });
