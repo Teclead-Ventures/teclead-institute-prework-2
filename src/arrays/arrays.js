@@ -82,6 +82,15 @@ filter() should return a new array with all elements that yielded a return value
 */
 function filter(array, callback) {}
 
+/*
+Complete the reject function below.
+
+Parameters:
+1: array: an array
+2: callback: a function
+
+reject() should return a new array with all elements that yielded a return value of false from the callback function.
+*/
 function reject(collection, callback) {}
 
 function every() {}
@@ -156,7 +165,6 @@ function prioritize(array, callback) {}
 module.exports = {
   intersection,
   union,
-  indexOf,
   unique,
   forEach,
   map,

@@ -167,6 +167,26 @@ describe('filter(array, callback)', () => {
   });
 });
 
+describe('reject(array, callback)', () => {
+  const { numbers, mockIsEven } = setup();
+
+  const result = reject(numbers, mockIsEven);
+  const expected = [1, 3, 5];
+
+  test('should return a new array', () => {
+    expect(result).toBeInstanceOf(Array);
+    expect(result).not.toBe(numbers);
+  });
+
+  test('callback should be called for every array element', () => {
+    expect(mockIsEven).toHaveBeenCalledTimes(numbers.length);
+  });
+
+  test('array elements should have been filtered by callback', () => {
+    expect(result).toEqual(expected);
+  });
+});
+
 describe('reduce(array, callback, initialValue) should:', () => {
   const { numbers, strings, initialNum, initialStr, mockAdd, mockUpperCase } =
     setup();
