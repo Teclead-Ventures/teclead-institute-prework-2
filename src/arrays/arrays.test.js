@@ -1,7 +1,6 @@
 const {
   intersection,
   union,
-  indexOf,
   unique,
   forEach,
   map,
@@ -23,6 +22,7 @@ function setup() {
     ],
 
     numbers: [1, 2, 3, 4, 5],
+    numbersWithDuplicates: [1, 2, 3, 4, 5, 1, 2, 3, 4, 5],
     initialNum: 10,
     expectedSums: [15, 25],
 
@@ -71,6 +71,20 @@ describe('union(arrays)', () => {
   });
 
   test('returned array should contain all values of the passed-in arrays', () => {
+    expect(result).toEqual(expected);
+  });
+});
+
+describe('unique(array)', () => {
+  const { numbers: expected, numbersWithDuplicates } = setup();
+
+  const result = unique(numbersWithDuplicates);
+
+  test('should return an array', () => {
+    expect(result).toBeInstanceOf(Array);
+  });
+
+  test('returned array should contain all unique values of the passed-in array', () => {
     expect(result).toEqual(expected);
   });
 });

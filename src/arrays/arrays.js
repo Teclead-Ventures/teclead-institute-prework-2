@@ -31,11 +31,17 @@ union() should return an array of values that are present in any of the input ar
 The returned array should not contain duplicates.
 Preserve the order of the values in the input arrays.
 */
-
 function union(arrays) {}
 
-function indexOf(array, value) {}
+/*
 
+Complete the unique function below.
+
+Parameters:
+1: array: an array
+
+unique() should return a new array with all duplicate elements removed.
+*/
 function unique(array) {}
 
 /*
@@ -52,7 +58,6 @@ forEach does not return anything.
 Here's a link to the mdn documentation for forEach():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 */
-
 function forEach(array, callback) {}
 
 /*
@@ -68,7 +73,6 @@ of calling the callback function on each element of the input array.
 Here's a link to the mdn documentation for map():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 */
-
 function map(array, callback) {}
 
 function filter(array, callback) {}
@@ -127,7 +131,6 @@ and then begins iterating from the second element.
 Here's a link to the mdn documentation for reduce():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 */
-
 function reduce(array, callback, initialValue) {}
 
 function flatten(array) {}
