@@ -118,9 +118,28 @@ The callback function should be called with the following arguments:
 2. the current array index
 3. the whole array itself
 */
-function reject(collection, callback) {}
+function reject(array, callback) {}
 
-function every() {}
+/*
+Complete the every function below. Do not use the native .every() method.
+
+Parameters:
+1: array: an array
+2: callback: a function
+
+every() should return true if the callback function returns true for every element in the array.
+Otherwise, it should return false.
+
+The callback function should be called with the following arguments:
+
+1. the current array element
+2. the current array index
+3. the whole array itself
+
+Here's a link to the mdn documentation for every():
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+*/
+function every(array, callback) {}
 
 function some() {}
 

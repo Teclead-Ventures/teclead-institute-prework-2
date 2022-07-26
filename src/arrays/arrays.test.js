@@ -39,6 +39,9 @@ function setup() {
     mockIsEven: jest.fn(function isEven(x) {
       return x % 2 === 0;
     }),
+    mockIsPositive: jest.fn(function isPositive(x) {
+      return x > 0;
+    }),
     mockUpperCase: jest.fn(function upperCase(accumulator, string) {
       return `${(accumulator + string).toUpperCase()}`;
     }),
@@ -184,6 +187,26 @@ describe('reject(array, callback)', () => {
 
   test('array elements should have been filtered by callback', () => {
     expect(result).toEqual(expected);
+  });
+});
+
+describe('every(array, callback)', () => {
+  const { numbers, mockIsEven, mockIsPositive } = setup();
+
+  const results = [mockIsEven, mockIsPositive].map(cb => every(numbers, cb));
+
+  test('should return a boolean', () => {
+    for (const result of results) {
+      expect(typeof result).toBe('boolean');
+    }
+  });
+
+  test('should return true if callback returns true for every element', () => {
+    expect(results[1]).toBe(true);
+  });
+
+  test('should return false if callback returns false for at least one element', () => {
+    expect(results[0]).toBe(false);
   });
 });
 
