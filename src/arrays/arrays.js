@@ -49,6 +49,12 @@ Parameters:
 2: callback: a function
 
 forEach() should call the callback on each element of the array.
+The callback should be called with the following arguments:
+
+1. the current array element
+2. the current array index
+3. the whole array itself
+
 forEach does not return anything.
 
 Here's a link to the mdn documentation for forEach():
@@ -66,6 +72,12 @@ Parameters:
 map() should return a new array filled with elements that are the result
 of calling the callback function on each element of the input array.
 
+The callback function should be called with the following arguments:
+
+1. the current array element
+2. the current array index
+3. the whole array itself
+
 Here's a link to the mdn documentation for map():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 */
@@ -79,6 +91,15 @@ Parameters:
 2: callback: a function
 
 filter() should return a new array with all elements that yielded a return value of true from the callback function.
+
+The callback function should be called with the following arguments:
+
+1. the current array element
+2. the current array index
+3. the whole array itself
+
+Here's a link to the mdn documentation for filter():
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 */
 function filter(array, callback) {}
 
@@ -90,6 +111,12 @@ Parameters:
 2: callback: a function
 
 reject() should return a new array with all elements that yielded a return value of false from the callback function.
+
+The callback function should be called with the following arguments:
+
+1. the current array element
+2. the current array index
+3. the whole array itself
 */
 function reject(collection, callback) {}
 
