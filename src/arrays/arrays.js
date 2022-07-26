@@ -141,7 +141,26 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 */
 function every(array, callback) {}
 
-function some() {}
+/*
+Complete the some function below. Do not use the native .some() method.
+
+Parameters:
+1: array: an array
+2: callback: a function
+
+some() should return true if the callback function returns true for any element in the array.
+Otherwise, it should return false.
+
+The callback function should be called with the following arguments:
+
+1. the current array element
+2. the current array index
+3. the whole array itself
+
+Here's a link to the mdn documentation for some():
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+*/
+function some(array, callback) {}
 
 /*
 Complete the reduce function below.

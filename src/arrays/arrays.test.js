@@ -42,6 +42,9 @@ function setup() {
     mockIsPositive: jest.fn(function isPositive(x) {
       return x > 0;
     }),
+    mockIsNegative: jest.fn(function isNegative(x) {
+      return x < 0;
+    }),
     mockUpperCase: jest.fn(function upperCase(accumulator, string) {
       return `${(accumulator + string).toUpperCase()}`;
     }),
@@ -207,6 +210,29 @@ describe('every(array, callback)', () => {
 
   test('should return false if callback returns false for at least one element', () => {
     expect(results[0]).toBe(false);
+  });
+});
+
+describe('some(array, callback)', () => {
+  const { numbers, mockIsEven, mockIsPositive, mockIsNegative } = setup();
+
+  const results = [mockIsEven, mockIsPositive, mockIsNegative].map(cb =>
+    some(numbers, cb)
+  );
+
+  test('should return a boolean', () => {
+    for (const result of results) {
+      expect(typeof result).toBe('boolean');
+    }
+  });
+
+  test('should return true if callback returns true for at least one element', () => {
+    expect(results[0]).toBe(true);
+    expect(results[1]).toBe(true);
+  });
+
+  test('should return false if callback returns false for every element', () => {
+    expect(results[2]).toBe(false);
   });
 });
 
