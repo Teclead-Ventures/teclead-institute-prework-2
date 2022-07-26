@@ -10,7 +10,6 @@ npm t arrays
 */
 
 /*
-
 Complete the intersection function below.
 
 Parameters:
@@ -21,7 +20,6 @@ intersection() should return an array of values that are present in all of the i
 function intersection(arrays) {}
 
 /*
-
 Complete the union function below.
 
 Parameters:
@@ -34,7 +32,6 @@ Preserve the order of the values in the input arrays.
 function union(arrays) {}
 
 /*
-
 Complete the unique function below.
 
 Parameters:
@@ -45,8 +42,7 @@ unique() should return a new array with all duplicate elements removed.
 function unique(array) {}
 
 /*
-
-Complete the forEach function below.
+Complete the forEach function below. Do not use the native .forEach() method.
 
 Parameters:
 1: array: an array
@@ -61,7 +57,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 function forEach(array, callback) {}
 
 /*
-Complete the map function below.
+Complete the map function below. Do not use the native .map() method.
 
 Parameters:
 1: array: an array
@@ -75,6 +71,15 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 */
 function map(array, callback) {}
 
+/*
+Complete the filter function below. Do not use the native .filter() method.
+
+Parameters:
+1: array: an array
+2: callback: a function
+
+filter() should return a new array with all elements that yielded a return value of true from the callback function.
+*/
 function filter(array, callback) {}
 
 function reject(collection, callback) {}
@@ -84,7 +89,6 @@ function every() {}
 function some() {}
 
 /*
-
 Complete the reduce function below.
 
 Parameters:
@@ -136,7 +140,6 @@ function reduce(array, callback, initialValue) {}
 function flatten(array) {}
 
 /*
-
 Complete the prioritize function below.
 
 Parameters:
