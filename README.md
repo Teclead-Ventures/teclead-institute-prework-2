@@ -5,11 +5,11 @@
 You will need to have installed:
 
 - [VS Code](https://code.visualstudio.com/download)
-- node.js using nvm (node version manager) – _see Tips & Resources section below_.
+- node.js using nvm (node version manager) – _see Tips & resources section below_.
 
 ## Getting started
 
-- **fork** this repository on GitHub and **clone** it to your computer. _See Tips & Resources section if this seems unfamiliar_.
+- **fork** this repository on GitHub and **clone** it to your computer. _See Tips & resources section if this seems unfamiliar_.
 - run `npm install` in the root directory of the repository to install all the dependencies
 
 ## Instructions
