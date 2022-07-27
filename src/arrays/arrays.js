@@ -51,6 +51,27 @@ unique(array); // -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 function unique(array) {}
 
 /*
+Complete the prioritize function below.
+
+Parameters:
+1: array: an array
+2: callback: a function
+
+The provided callback will return either true or false.
+prioritize should iterate through the array and perform the callback on each element,
+returning a new array where all the elements that yielded a
+return value of true come first, and the elements that yielded false come after.
+
+Example:
+const array = [1, 2, 3, 4, 5];
+function isEven (element, index, array) {
+  return element % 2 === 0;
+}
+prioritize(array, isEven); // -> [2, 4, 1, 3, 5]
+*/
+function prioritize(array, callback) {}
+
+/*
 Complete the forEach function below. Do not use the native .forEach() method.
 
 Parameters:
@@ -66,7 +87,7 @@ The callback should be called with the following arguments:
 
 forEach does not return anything.
 
-Here's a link to the mdn documentation for forEach():
+Here's a link to the mdn documentation for .forEach():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
 Example:
@@ -96,7 +117,7 @@ The callback function should be called with the following arguments:
 2. the current array index
 3. the whole array itself
 
-Here's a link to the mdn documentation for map():
+Here's a link to the mdn documentation for .map():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 
 Example:
@@ -121,7 +142,7 @@ The callback function should be called with the following arguments:
 2. the current array index
 3. the whole array itself
 
-Here's a link to the mdn documentation for filter():
+Here's a link to the mdn documentation for .filter():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
 Example:
@@ -169,7 +190,7 @@ The callback function should be called with the following arguments:
 2. the current array index
 3. the whole array itself
 
-Here's a link to the mdn documentation for every():
+Here's a link to the mdn documentation for .every():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
 
 Example:
@@ -199,7 +220,7 @@ The callback function should be called with the following arguments:
 2. the current array index
 3. the whole array itself
 
-Here's a link to the mdn documentation for some():
+Here's a link to the mdn documentation for .some():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 
 Example:
@@ -215,7 +236,7 @@ some(array, isEven); // -> false
 function some(array, callback) {}
 
 /*
-Complete the reduce function below.
+Complete the reduce function below. Do not use the native .reduce() method.
 
 Parameters:
 array: an array
@@ -258,7 +279,7 @@ A clarification: if no argument is provided for initialValue
 reduce() automatically initializes the accumulator to be the first array element,
 and then begins iterating from the second element.
 
-Here's a link to the mdn documentation for reduce():
+Here's a link to the mdn documentation for .reduce():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 Example:
@@ -280,7 +301,7 @@ flatten() should return a new array with all elements of the input array flatten
 
 Getting this to work for arrays of any depth is a challenge. You will need to use recursion. Here's a link to a great intro to recursion: https://medium.com/codesmith-software-engineering/recursion-a-free-course-with-challenges-video-1c24074f134a
 
-And here's a link to the mdn documentation for flat():
+And here's a link to the mdn documentation for .flat():
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
 
 Example:
@@ -288,27 +309,6 @@ const array = [1, [2, 3], [[4], [5]]];
 flatten(array); // -> [1, 2, 3, 4, 5]
 */
 function flatten(array) {}
-
-/*
-Complete the prioritize function below.
-
-Parameters:
-1: array: an array
-2: callback: a function
-
-The provided callback will return either true or false.
-prioritize should iterate through the array and perform the callback on each element,
-returning a new array where all the elements that yielded a
-return value of true come first, and the elements that yielded false come after.
-
-Example:
-const array = [1, 2, 3, 4, 5];
-function isEven (element, index, array) {
-  return element % 2 === 0;
-}
-prioritize(array, isEven); // -> [2, 4, 1, 3, 5]
-*/
-function prioritize(array, callback) {}
 
 module.exports = {
   intersection,
