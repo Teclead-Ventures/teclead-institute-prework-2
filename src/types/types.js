@@ -36,6 +36,18 @@ isArray(1) // => false
 function isArray(value) {}
 
 /*
+Complete the function isFunction below.
+
+It has one parameter (a value).
+It should return true if the value is a function, and false otherwise.
+
+Example:
+isFunction(function() {}) // => true
+isFunction(1) // => false
+*/
+function isFunction(value) {}
+
+/*
 Complete the function isObject below.
 
 It has one parameter (a value).
@@ -48,18 +60,6 @@ isObject([]) // => true
 isObject(1) // => false
 */
 function isObject(value) {}
-
-/*
-Complete the function isFunction below.
-
-It has one parameter (a value).
-It should return true if the value is a function, and false otherwise.
-
-Example:
-isFunction(function() {}) // => true
-isFunction(1) // => false
-*/
-function isFunction(value) {}
 
 /*
 Complete the function isNaN below.
